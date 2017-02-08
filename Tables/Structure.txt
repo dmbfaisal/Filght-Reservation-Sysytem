@@ -1,0 +1,76 @@
+delimiter $$
+
+CREATE DATABASE `flight` /*!40100 DEFAULT CHARACTER SET utf8 */$$
+
+
+delimiter $$
+
+CREATE TABLE `details` (
+  `flightno` int(11) NOT NULL,
+  `source` varchar(20) NOT NULL,
+  `destination` varchar(20) NOT NULL,
+  `company` varchar(15) NOT NULL,
+  `business` int(11) NOT NULL,
+  `economy` int(11) NOT NULL,
+  `time` varchar(6) NOT NULL,
+  `monday` int(11) NOT NULL,
+  `tuesday` int(11) NOT NULL,
+  `wednesday` int(11) NOT NULL,
+  `thursday` int(11) NOT NULL,
+  `friday` int(11) NOT NULL,
+  `saturday` int(11) NOT NULL,
+  `sunday` int(2) NOT NULL,
+  `fare` int(11) NOT NULL,
+  PRIMARY KEY (`flightno`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
+delimiter $$
+
+CREATE TABLE `reservations` (
+  `flightno` int(11) NOT NULL,
+  `name` varchar(15) NOT NULL,
+  `passport` varchar(45) NOT NULL,
+  `date` varchar(20) NOT NULL,
+  `source` varchar(20) NOT NULL,
+  `destination` varchar(20) NOT NULL,
+  `time` varchar(6) NOT NULL,
+  `company` varchar(15) NOT NULL,
+  `class` varchar(45) NOT NULL,
+  `account` varchar(10) NOT NULL,
+  `transactionid` int(11) NOT NULL,
+  `cardno` varchar(16) NOT NULL,
+  `fare` int(11) NOT NULL,
+  `status` varchar(11) NOT NULL,
+  PRIMARY KEY (`transactionid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
+delimiter $$
+
+CREATE TABLE `users` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `first` varchar(20) NOT NULL,
+  `last` varchar(20) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `dob` varchar(30) NOT NULL,
+  `mob` varchar(10) NOT NULL,
+  `passport` varchar(9) NOT NULL,
+  `line1` varchar(30) NOT NULL,
+  `line2` varchar(30) NOT NULL,
+  `state` varchar(18) NOT NULL,
+  `city` varchar(15) NOT NULL,
+  `zip` varchar(8) NOT NULL,
+  `ctype` varchar(2) DEFAULT NULL,
+  `cno` varchar(20) DEFAULT NULL,
+  `cval` varchar(12) DEFAULT NULL,
+  `code` varchar(5) DEFAULT NULL,
+  `utype` int(11) DEFAULT NULL,
+  `ques` int(11) DEFAULT NULL,
+  `answer` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8$$
+
+
